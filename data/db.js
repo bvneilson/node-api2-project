@@ -1,6 +1,6 @@
 const knex = require('knex');
 const knexConfig = require('../knexfile.js');
-const db = knex(knexConfig.development);
+const db = knex(knexConfig.development)['development'];
 
 module.exports = {
   find,
@@ -11,6 +11,7 @@ module.exports = {
   findPostComments,
   findCommentById,
   insertComment,
+  db
 };
 
 function find() {
